@@ -1,9 +1,9 @@
 app:
-  title: Scaffolded Backstage App
+  title: Babel App
   baseUrl: http://localhost:3000
 
 organization:
-  name: My Company
+  name: Babel
 
 backend:
   # Used for enabling authentication, secret is shared by all backend plugins
@@ -31,10 +31,12 @@ backend:
     # config options: https://node-postgres.com/apis/client
     client: pg
     connection:
-      host: ${POSTGRES_HOST}
-      port: ${POSTGRES_PORT}
       user: ${POSTGRES_USER}
       password: ${POSTGRES_PASSWORD}
+      port: ${POSTGRES_PORT}
+      host: ${POSTGRES_HOST}
+      
+      
       # https://node-postgres.com/features/ssl
       # ssl: require # see https://www.postgresql.org/docs/current/libpq-ssl.html Table 33.1. SSL Mode Descriptions (e.g. require)
         #ca: # if you have a CA file and want to verify it you can uncomment this section
@@ -67,11 +69,21 @@ techdocs:
   generator:
     runIn: 'docker' # Alternatives - 'local'
   publisher:
-    type: 'local' # Alternatives - 'googleGcs' or 'awsS3'. Read documentation for using alternatives.
+    type: 'azureBlobStorage' # Alternatives - 'googleGcs' or 'awsS3'. Read documentation for using alternatives.
+    azureBlobStorage:
+      containerName: 'container-backstagepoc'
+      credentials:
+        accountName: 'csb1003200283316de5'
+        accountKey: ${TECHDOCS_AZURE_BLOB_STORAGE_ACCOUNT_KEY}
 
 auth:
   # see https://backstage.io/docs/auth/ to learn about auth providers
-  providers: {}
+  #environment: development
+  providers:
+   # github:
+      #development:
+        #clientId: 6141db6493a3cc0451c5
+        #clientSecret: 19a26cbf4789223aeb7fe952aba8e40c13679be2
 
 scaffolder:
   # see https://backstage.io/docs/features/software-templates/configuration for software template options
