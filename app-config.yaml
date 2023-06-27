@@ -87,6 +87,10 @@ auth:
 
 scaffolder:
   # see https://backstage.io/docs/features/software-templates/configuration for software template options
+  defaultAuthor:
+    name: Mario. V. V. # Defaults to `Scaffolder`
+    email: mario.vegara@babelgroup.com # Defaults to `scaffolder@backstage.io`
+  defaultCommitMessage: "Another commit scaffolded" # Defaults to 'Initial commit'
 
 catalog:
   providers:
@@ -158,10 +162,10 @@ catalog:
     - allow: [Component, System, API, Resource, Location]
   locations:
     # Local example organizational data
-    - type: file
-      target: ../../examples/org.yaml
+    - type: url
+      target: https://github.com/backstage/software-templates/blob/main/scaffolder-templates/react-ssr-template/template.yaml
       rules:
-        - allow: [User, Group]
+        - allow: [Template]
 
     ## Uncomment these lines to add more example data
     # - type: url
