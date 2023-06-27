@@ -167,7 +167,7 @@ catalog:
       target: https://github.com/MarioVega1991/BackstageMario/blob/main/catalog-model/artist-lookup-component.yaml
 
     - type: file
-      target: ../../catalog-model/my-template.yaml
+      target: my-template.yaml
     ## Uncomment these lines to add more example data
     # - type: url
     #   target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/all.yaml
