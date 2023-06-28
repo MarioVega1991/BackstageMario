@@ -46,11 +46,11 @@ integrations:
     - host: github.com
       # This is a Personal Access Token or PAT from GitHub. You can find out how to generate this token, and more information
       # about setting up the GitHub integration here: https://backstage.io/docs/getting-started/configuration#setting-up-a-github-integration
-      token: ${GITHUB_TOKEN}
+      token: 'Z2hwXzJ4Z0JuU0Q3dlE5TlBjemxqTTRFSmtoOFp2QkRHWTJzbjhYSg=='
     
     - host: github.com
       rawBaseUrl: https://github.com/MarioVega1991/BackstageMario
-      token: ${GITHUB_TOKEN}
+      token: 'Z2hwXzJ4Z0JuU0Q3dlE5TlBjemxqTTRFSmtoOFp2QkRHWTJzbjhYSg=='
 
 proxy:
   ### Example for how to add a proxy endpoint for the frontend.
